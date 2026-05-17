@@ -18,6 +18,22 @@ Open `PropertyScanIQ.xcodeproj` in Xcode on macOS and run the `PropertyScanIQ` s
 
 This workspace was syntax-checked with `swiftc -parse` on the generated Swift source set. A full iOS simulator build requires macOS/Xcode tooling.
 
+## GitHub Xcode Upload
+
+The repository includes two GitHub Actions workflows:
+
+- `iOS Build Check`: builds the app for an iOS simulator on `macos-26`.
+- `iOS App Store Upload`: manually archives and uploads the app to App Store Connect with Xcode.
+
+Before running `iOS App Store Upload`, add these GitHub repository secrets:
+
+- `APPLE_TEAM_ID`
+- `ASC_KEY_ID`
+- `ASC_ISSUER_ID`
+- `ASC_PRIVATE_KEY`
+
+The App Store Connect API key must have permission to manage apps and builds. Apple currently requires iOS and iPadOS apps uploaded to App Store Connect to be built with Xcode 26 or later using the iOS/iPadOS 26 SDK or later.
+
 ## Production Wiring
 
 Before App Store submission:
