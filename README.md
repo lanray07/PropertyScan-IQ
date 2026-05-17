@@ -25,5 +25,10 @@ Before App Store submission:
 - Replace the remote AI endpoint in `RemoteAIService`
 - Keep API keys server-side only
 - Configure StoreKit product IDs in App Store Connect
-- Add real privacy policy and terms URLs
+- Review and publish the privacy policy and terms
 - Review App Store subscription, privacy, and AI disclosure language
+
+## Policies
+
+- [Privacy Policy](PRIVACY.md)
+- [Terms of Use](TERMS.md)
