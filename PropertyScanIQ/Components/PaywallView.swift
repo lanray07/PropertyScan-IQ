@@ -97,18 +97,27 @@ struct PaywallView: View {
                 }
             }
 
-            Button(plan == .free ? "Use Free" : "Choose \(plan.displayName)") {
-                Task {
-                    if plan == .free {
-                        subscriptionManager.resetMockSubscription()
-                    } else {
+            let actionTitle = plan == .free ? "Use Free" : "Choose \(plan.displayName)"
+
+            if plan.isPaid {
+                Button(actionTitle) {
+                    Task {
                         await subscriptionManager.purchase(plan: plan)
+                        dismiss()
                     }
-                    dismiss()
                 }
+                .buttonStyle(.borderedProminent)
+                .frame(maxWidth: .infinity)
+            } else {
+                Button(actionTitle) {
+                    Task {
+                        subscriptionManager.resetMockSubscription()
+                        dismiss()
+                    }
+                }
+                .buttonStyle(.bordered)
+                .frame(maxWidth: .infinity)
             }
-            .buttonStyle(plan.isPaid ? .borderedProminent : .bordered)
-            .frame(maxWidth: .infinity)
         }
         .psiCard()
     }
