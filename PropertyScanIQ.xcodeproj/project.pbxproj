@@ -477,6 +477,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "PropertyScan IQ";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSCameraUsageDescription = "PropertyScan IQ uses the camera to capture property inspection photos.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "PropertyScan IQ can save generated report files and inspection images you choose to export.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "PropertyScan IQ uses your photo library when you choose property inspection photos.";
@@ -511,6 +512,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "PropertyScan IQ";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSCameraUsageDescription = "PropertyScan IQ uses the camera to capture property inspection photos.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "PropertyScan IQ can save generated report files and inspection images you choose to export.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "PropertyScan IQ uses your photo library when you choose property inspection photos.";
