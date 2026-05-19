@@ -51,6 +51,16 @@ struct PaywallView: View {
                 .buttonStyle(.bordered)
                 .frame(maxWidth: .infinity)
 
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Subscriptions auto-renew monthly or yearly unless cancelled at least 24 hours before the end of the current period. Purchases are charged to your Apple ID and can be managed in App Store account settings.")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+
+                    Link("Privacy policy", destination: URL(string: "https://github.com/lanray07/PropertyScan-IQ/blob/main/PRIVACY.md")!)
+                    Link("Terms of Use (EULA)", destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
+                }
+                .font(.footnote)
+
                 if subscriptionManager.mockModeEnabled {
                     Text("Mock subscription mode is enabled for testing. Replace product IDs and disable mock mode for production StoreKit testing.")
                         .font(.footnote)
@@ -82,6 +92,11 @@ struct PaywallView: View {
                     Text(plan.priceText)
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
+                    if plan.isPaid {
+                        Text(plan.subscriptionLengthText)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
                 }
                 Spacer()
                 if subscriptionManager.currentPlan == plan && subscriptionManager.isActive == plan.isPaid {

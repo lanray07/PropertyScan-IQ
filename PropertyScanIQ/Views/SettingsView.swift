@@ -77,8 +77,8 @@ struct SettingsView: View {
             }
 
             Section("Legal and disclosure") {
-                Link("Privacy policy", destination: URL(string: "https://your-backend-url.com/privacy")!)
-                Link("Terms of use", destination: URL(string: "https://your-backend-url.com/terms")!)
+                Link("Privacy policy", destination: URL(string: "https://github.com/lanray07/PropertyScan-IQ/blob/main/PRIVACY.md")!)
+                Link("Terms of Use (EULA)", destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
                 DisclosureGroup("AI disclaimer") {
                     Text(ReportContentBuilder.safetyDisclaimer)
                         .font(.footnote)

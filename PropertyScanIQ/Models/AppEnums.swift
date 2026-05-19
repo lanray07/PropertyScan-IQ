@@ -219,6 +219,14 @@ enum SubscriptionPlan: String, CaseIterable, Identifiable {
         }
     }
 
+    var subscriptionLengthText: String {
+        switch self {
+        case .free: "No subscription"
+        case .proMonthly, .businessMonthly: "1 month auto-renewable subscription"
+        case .proYearly: "1 year auto-renewable subscription"
+        }
+    }
+
     var isPaid: Bool { self != .free }
 }
 

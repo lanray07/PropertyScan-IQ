@@ -4,9 +4,17 @@ import SwiftUI
 struct RootView: View {
     @Environment(\.modelContext) private var modelContext
     @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
-    @StateObject private var subscriptionManager = SubscriptionManager(mockModeEnabled: true)
+    @StateObject private var subscriptionManager = SubscriptionManager(mockModeEnabled: RootView.mockSubscriptionModeEnabled)
 
     private let aiService: any AIService = MockAIService()
+
+    private static var mockSubscriptionModeEnabled: Bool {
+        #if DEBUG
+        true
+        #else
+        false
+        #endif
+    }
 
     var body: some View {
         Group {
